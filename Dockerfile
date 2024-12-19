@@ -23,11 +23,12 @@ RUN adduser --disabled-password --gecos "" factorio \
 adduser factorio sudo && \
 echo 'factorio ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
-# Give Ownership of the Factorio Account Directory to the Factorio User
-RUN chown -R factorio:factorio /home/factorio/
+# Create a Folder to host the Factorio Server Executable and Give Ownership of the Factorio Account Directory to the Factorio User
+RUN sudo mkdir /Factorio \
+&& sudo chown -R factorio:factorio /Factorio
 
 # Change the Working Directory
-WORKDIR /home/factorio
+WORKDIR /Factorio
 
 # Download the Factorio Server Files
 RUN wget https://factorio.com/get-download/${FACTORIO_VERSION}/headless/linux64 -O factorioserver.tar.xz
@@ -42,3 +43,6 @@ RUN wget https://factorio.com/get-download/${FACTORIO_VERSION}/headless/linux64 
 # Extract the Server Files and Remove the Tar File
 RUN tar -xvf factorioserver.tar.xz \
 && rm -rf factorioserver.tar.xz
+
+# Change to the Home Directory
+WORKDIR /home/factorio
