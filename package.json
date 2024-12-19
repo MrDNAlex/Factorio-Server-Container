@@ -1,0 +1,17 @@
+{
+    "name": "factorioserver",
+    "version": "1.0.0",
+    "main": "./index.js",
+    "dependencies": {
+    },
+    "scripts": {
+        "build": "docker build -t mrdnalex/factorioserver .",
+        "publish": "npm run build && docker login -u mrdnalex  && docker push mrdnalex/factorioserver"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+    }
+}
