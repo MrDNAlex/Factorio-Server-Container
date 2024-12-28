@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y \
     lib32z1 \
     curl \
     xdg-user-dirs \
+    unzip \
     && rm -rf /var/lib/apt/lists/*
 
 # Add Steam user and group and Sudo it for SteamCMD

@@ -6,7 +6,7 @@
     },
     "scripts": {
         "build": "docker build -t mrdnalex/factorioserver .",
-        "publish": "npm run build && docker login -u mrdnalex  && docker push mrdnalex/factorioserver"
+        "publish": "npm run build && docker push mrdnalex/factorioserver"
     },
     "keywords": [],
     "author": "",
