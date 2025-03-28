@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 # Set the Factorio Server Version
-ENV FACTORIO_VERSION=2.0.28
+ENV FACTORIO_VERSION=2.0.42
 
 # Add the Factorio Executable to the Path
 ENV PATH="/bin:/usr/bin:/usr/local/bin:/Factorio/factorio/bin/x64:${PATH}"
