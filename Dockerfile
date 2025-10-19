@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 # Set the Factorio Server Version
-ENV FACTORIO_VERSION=2.0.42
+ENV FACTORIO_VERSION=2.0.69
 
 # Add the Factorio Executable to the Path
 ENV PATH="/bin:/usr/bin:/usr/local/bin:/Factorio/factorio/bin/x64:${PATH}"
@@ -38,13 +38,6 @@ WORKDIR /Factorio
 
 # Download the Factorio Server Files
 RUN wget https://factorio.com/get-download/${FACTORIO_VERSION}/headless/linux64 -O factorioserver.tar.xz
-
-# Copy the Factorio Server Bot Files
-#COPY ./ /Factorio
-
-# Copy the file from the Project Directory to the Factorio Directory and remove the old one
-#RUN cp /Factorio/factorio_headless_linux_2.0.23.tar.xz /home/factorio/factorioserver.tar.xz \
-#&& rm -rf /FactorioBot/factorio_headless_linux_2.0.23.tar.xz
 
 # Extract the Server Files and Remove the Tar File
 RUN tar -xvf factorioserver.tar.xz \
